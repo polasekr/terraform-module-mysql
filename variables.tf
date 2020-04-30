@@ -63,3 +63,15 @@ variable "collation" {
   description = "Specifies the Collation for the MySQL Database, which needs to be a valid MySQL Collation."
   default     = "utf8_unicode_ci"
 }
+
+variable "subscription_id" {
+}
+
+variable "client_id" {
+}
+
+variable "client_secret" {
+}
+
+variable "tenant_id" {
+}
