@@ -39,26 +39,6 @@ variable "ssl_enforcement" {
   default     = "Enabled"
 }
 
-variable "sku_name" {
-  description = "Specifies the SKU Name for this MySQL Server. The name of the SKU, follows the tier + family + cores pattern (e.g. B_Gen4_1, GP_Gen5_8)."
-  default     = "B_Gen4_2"
-}
-
-variable "sku_capacity" {
-  description = "The scale up/out capacity, representing server's compute units."
-  default     = 2
-}
-
-variable "sku_tier" {
-  description = "The tier of the particular SKU. Possible values are Basic, GeneralPurpose, and MemoryOptimized."
-  default     = "Basic"
-}
-
-variable "sku_family" {
-  description = "The family of hardware Gen4 or Gen5, before selecting your family check the product documentation for availability in your region."
-  default     = "Gen4"
-}
-
 variable "storage_mb" {
   description = "Max storage allowed for a server. Possible values are between 5120 MB(5GB) and 1048576 MB(1TB) for the Basic SKU and between 5120 MB(5GB) and 4194304 MB(4TB) for General Purpose/Memory Optimized SKUs."
   default     = 5120
