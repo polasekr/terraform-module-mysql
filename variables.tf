@@ -68,10 +68,10 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "allowed_cidrs" {
-  type        = list(string)
-  description = "List of authorized cidrs"
-}
+#variable "allowed_cidrs" {
+#  type        = list(string)
+#  description = "List of authorized cidrs"
+#}
 
 variable "mysql_options" {
   type        = list(map(string))

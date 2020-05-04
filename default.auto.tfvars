@@ -7,4 +7,3 @@ collation = "utf8_unicode_ci"
 auto_grow = "Disabled"
 tags = {}
 mysql_options = []
-allowed_cidrs = [ "192.168.1.0/24" ]
