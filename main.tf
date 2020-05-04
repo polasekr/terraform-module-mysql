@@ -37,12 +37,12 @@ resource "azurerm_mysql_configuration" "mysql_config" {
   value               = var.mysql_options[count.index].value
 }
 
-resource "azurerm_mysql_firewall_rule" "mysql" {
-  count = length(var.allowed_cidrs)
-
-  name                = replace(replace(var.allowed_cidrs[count.index], ".", "-"), "/", "_")
-  resource_group_name = var.resource_group_name
-  server_name         = azurerm_mysql_server.mysql.name
-  start_ip_address    = cidrhost(var.allowed_cidrs[count.index], 0)
-  end_ip_address      = cidrhost(var.allowed_cidrs[count.index], -1)
-}
+#resource "azurerm_mysql_firewall_rule" "mysql" {
+#  count = length(var.allowed_cidrs)
+#
+#  name                = replace(replace(var.allowed_cidrs[count.index], ".", "-"), "/", "_")
+#  resource_group_name = var.resource_group_name
+#  server_name         = azurerm_mysql_server.mysql.name
+#  start_ip_address    = cidrhost(var.allowed_cidrs[count.index], 0)
+#  end_ip_address      = cidrhost(var.allowed_cidrs[count.index], -1)
+#}
