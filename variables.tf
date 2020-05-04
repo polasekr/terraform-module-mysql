@@ -1,6 +1,5 @@
 variable "resource_group_name" {
   description = "Default resource group name that the database will be created in."
-  default     = "mysqlResourceGroup"
 }
 
 variable "location" {
@@ -17,16 +16,6 @@ variable "admin_username" {
 
 variable "password" {
   description = "The administrator password of the MySQL Server."
-}
-
-variable "start_ip_address" {
-  description = "Defines the start IP address used in your database firewall rule."
-  default     = "0.0.0.0"
-}
-
-variable "end_ip_address" {
-  description = "Defines the end IP address used in your database firewall rule."
-  default     = "255.255.255.255"
 }
 
 variable "db_version" {
@@ -64,14 +53,28 @@ variable "collation" {
   default     = "utf8_unicode_ci"
 }
 
-variable "subscription_id" {
+variable "auto_grow" {
+  description = "Defines whether autogrow is enabled or disabled for the storage"
+  default     = "Disabled"
 }
 
-variable "client_id" {
+variable "sku_name" {
+  description = "Specifies the SKU Name for this MySQL Server"
 }
 
-variable "client_secret" {
+variable "tags" {
+  default     = {}
+  description = "Any tags that should be present on the Virtual Network resources"
+  type        = map(string)
 }
 
-variable "tenant_id" {
+variable "allowed_cidrs" {
+  type        = list(string)
+  description = "List of authorized cidrs"
+}
+
+variable "mysql_options" {
+  type        = list(map(string))
+  default     = []
+  description = "List of configuration options : https://docs.microsoft.com/fr-fr/azure/mysql/howto-server-parameters#list-of-configurable-server-parameters"
 }
