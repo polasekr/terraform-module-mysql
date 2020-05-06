@@ -20,7 +20,7 @@ variable "password" {
 
 variable "db_version" {
   description = "Specifies the version of MySQL to use. Valid values are 5.6 and 5.7."
-  default     = "5.7"
+  default = 5.7
 }
 
 variable "ssl_enforcement" {
@@ -68,10 +68,10 @@ variable "tags" {
   type        = map(string)
 }
 
-#variable "allowed_cidrs" {
-#  type        = list(string)
-#  description = "List of authorized cidrs"
-#}
+variable "allowed_cidrs" {
+  type        = list(string)
+  description = "List of authorized cidrs"
+}
 
 variable "mysql_options" {
   type        = list(map(string))
@@ -79,7 +79,7 @@ variable "mysql_options" {
   description = "List of configuration options : https://docs.microsoft.com/fr-fr/azure/mysql/howto-server-parameters#list-of-configurable-server-parameters"
 }
 
-variable "ARM_SUBSCRIPTION_ID" { }
-variable "ARM_CLIENT_ID" { }
-variable "ARM_CLIENT_SECRET" { }
-variable "ARM_TENANT_ID" { }
+#variable "ARM_SUBSCRIPTION_ID" { }
+#variable "ARM_CLIENT_ID" { }
+#variable "ARM_CLIENT_SECRET" { }
+#variable "ARM_TENANT_ID" { }
